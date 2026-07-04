@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #3A3A36;
+  --color-secondary: #EEEAE4;
+  --color-tertiary: #D8D2CA;
+  --color-neutral: #FAF9F6;
+  --color-accent: #9A8066;
+  --color-accent-hover: #8B725A;
+  --color-accent-light: #C8B7A3;
+  --color-subtext: #777169;
+  --color-card: #FFFFFF;
+
+  --shadow-soft: 0 12px 30px rgba(58, 58, 54, 0.08);
+  --shadow-button: 0 8px 18px rgba(154, 128, 102, 0.25);
+}
+
+@theme inline {
+  --font-sans: var(--font-noto-sans-jp);
+  --font-serif: var(--font-cormorant);
+
+  --color-elise-primary: var(--color-primary);
+  --color-elise-secondary: var(--color-secondary);
+  --color-elise-tertiary: var(--color-tertiary);
+  --color-elise-neutral: var(--color-neutral);
+  --color-elise-accent: var(--color-accent);
+  --color-elise-accent-hover: var(--color-accent-hover);
+  --color-elise-accent-light: var(--color-accent-light);
+  --color-elise-subtext: var(--color-subtext);
+  --color-elise-card: var(--color-card);
+}
+
+body {
+  background-color: var(--color-neutral);
+  color: var(--color-primary);
+  font-family: var(--font-noto-sans-jp), "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+}
+
+.header-glass {
+  background: rgba(250, 249, 246, 0.86);
+  backdrop-filter: blur(6px);
+}
+
+.concept-image-frame {
+  filter: drop-shadow(0 12px 30px rgba(58, 58, 54, 0.08));
+}
+
+/* clipPath 底辺 y（379.422px）に合わせた PC コンテナ高さ — objectBoundingBox と併用 */
+@media (width >= 768px) {
+  .concept-image-container {
+    height: var(--concept-clip-max-y);
+  }
+}
+
+.concept-image-border {
+  overflow: visible;
+}
+
+.concept-image-photo {
+  filter: brightness(1.02) saturate(1.03);
+}
+
+.concept-image-warm-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(250, 249, 246, 0.05) 0%,
+    transparent 55%,
+    rgba(238, 234, 228, 0.04) 100%
+  );
+  pointer-events: none;
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-card);
+  box-shadow: var(--shadow-button);
+  transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+}
