@@ -39,7 +39,7 @@ export default function Header() {
             href="#reservation"
             className="btn-accent rounded-full px-6 py-2.5 text-[13px] tracking-[0.06em]"
           >
-            Reservation
+            Web予約はこちら
           </Link>
         </nav>
 
@@ -88,10 +88,10 @@ export default function Header() {
             <li className="pt-2">
               <Link
                 href="#reservation"
-                className="btn-accent inline-block rounded-full px-8 py-3 text-[14px] tracking-[0.06em]"
+                className="btn-accent inline-block rounded-full px-8 py-3.5 text-[14px] tracking-[0.06em]"
                 onClick={() => setIsOpen(false)}
               >
-                Reservation
+                Web予約はこちら
               </Link>
             </li>
           </ul>

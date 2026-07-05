@@ -51,7 +51,7 @@ export default function Hero() {
             href="#reservation"
             className="btn-accent mt-8 inline-flex items-center justify-center rounded-full px-8 py-3.5 text-[14px] tracking-[0.08em] md:mt-10"
           >
-            Web 予約はこちら
+            Web予約はこちら
           </Link>
         </div>
       </div>

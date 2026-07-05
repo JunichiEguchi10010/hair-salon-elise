@@ -45,6 +45,128 @@ body {
   backdrop-filter: blur(6px);
 }
 
+.section-shell {
+  margin-inline: auto;
+  max-width: var(--container-7xl);
+  padding-inline: calc(var(--spacing) * 5);
+  padding-top: calc(var(--spacing) * 10);
+  padding-bottom: calc(var(--spacing) * 20);
+}
+
+@media (width >= 48rem) {
+  .section-shell {
+    padding-inline: calc(var(--spacing) * 10);
+    padding-top: calc(var(--spacing) * 14);
+    padding-bottom: calc(var(--spacing) * 28);
+  }
+}
+
+@media (width >= 64rem) {
+  .section-shell {
+    padding-inline: calc(var(--spacing) * 14);
+    padding-top: calc(var(--spacing) * 16);
+    padding-bottom: calc(var(--spacing) * 32);
+  }
+}
+
+.section-shell-tight {
+  margin-inline: auto;
+  max-width: var(--container-7xl);
+  padding-inline: calc(var(--spacing) * 5);
+  padding-top: calc(var(--spacing) * 4);
+  padding-bottom: calc(var(--spacing) * 20);
+}
+
+@media (width >= 48rem) {
+  .section-shell-tight {
+    padding-inline: calc(var(--spacing) * 10);
+    padding-top: calc(var(--spacing) * 6);
+    padding-bottom: calc(var(--spacing) * 28);
+  }
+}
+
+@media (width >= 64rem) {
+  .section-shell-tight {
+    padding-inline: calc(var(--spacing) * 14);
+    padding-top: calc(var(--spacing) * 8);
+    padding-bottom: calc(var(--spacing) * 32);
+  }
+}
+
+.section-content {
+  margin-top: calc(var(--spacing) * 14);
+}
+
+@media (width >= 48rem) {
+  .section-content {
+    margin-top: calc(var(--spacing) * 16);
+  }
+}
+
+@media (width >= 64rem) {
+  .section-content {
+    margin-top: calc(var(--spacing) * 20);
+  }
+}
+
+.section-label {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--color-subtext);
+  text-transform: uppercase;
+}
+
+.section-divider {
+  display: block;
+  margin-top: calc(var(--spacing) * 4);
+  height: 1px;
+  width: calc(var(--spacing) * 12);
+  background-color: var(--color-tertiary);
+}
+
+.section-title {
+  margin-top: calc(var(--spacing) * 6);
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+@media (width >= 40rem) {
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (width >= 48rem) {
+  .section-title {
+    margin-top: calc(var(--spacing) * 8);
+    font-size: 32px;
+  }
+}
+
+@media (width >= 64rem) {
+  .section-title {
+    font-size: 36px;
+  }
+}
+
+.section-description {
+  margin-top: calc(var(--spacing) * 5);
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--color-subtext);
+}
+
+@media (width >= 48rem) {
+  .section-description {
+    margin-top: calc(var(--spacing) * 6);
+    font-size: 14px;
+  }
+}
+
 .concept-image-frame {
   filter: drop-shadow(0 12px 30px rgba(58, 58, 54, 0.08));
 }
@@ -60,20 +182,8 @@ body {
   overflow: visible;
 }
 
-.concept-image-photo {
-  filter: brightness(1.02) saturate(1.03);
-}
-
-.concept-image-warm-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(250, 249, 246, 0.05) 0%,
-    transparent 55%,
-    rgba(238, 234, 228, 0.04) 100%
-  );
-  pointer-events: none;
+.elise-photo {
+  filter: brightness(1.015) saturate(1.02) contrast(0.995);
 }
 
 .btn-accent {
@@ -85,4 +195,28 @@ body {
 
 .btn-accent:hover {
   background-color: var(--color-accent-hover);
+}
+
+.menu-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.staff-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.reservation-step-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-item {
+  box-shadow: var(--shadow-soft);
+}
+
+.access-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.instagram-photo {
+  box-shadow: var(--shadow-soft);
 }

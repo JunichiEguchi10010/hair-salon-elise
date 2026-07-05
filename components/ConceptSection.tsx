@@ -28,36 +28,10 @@ export default function ConceptSection() {
       aria-labelledby="concept-heading"
       className="bg-[var(--color-neutral)]"
     >
-      <div className="mx-auto max-w-7xl px-5 pb-20 pt-4 md:px-10 md:pb-28 md:pt-6 lg:px-14 lg:pb-32 lg:pt-8">
+      <div className="section-shell-tight">
         <div className="flex flex-col items-center gap-16 md:flex-row md:items-center md:gap-14 lg:gap-16">
           {/* Image — SVG clipPath arch crop */}
           <div className="relative w-full shrink-0 px-3 py-4 md:-mt-10 md:w-[44%] md:px-6 md:py-8 lg:-mt-14 lg:w-[42%]">
-            <div
-              className="pointer-events-none absolute -left-4 top-8 hidden text-[var(--color-tertiary)] opacity-60 md:block lg:-left-8"
-              aria-hidden="true"
-            >
-              <svg
-                width="48"
-                height="120"
-                viewBox="0 0 48 120"
-                fill="none"
-                className="h-28 w-10 lg:h-32"
-              >
-                <path
-                  d="M24 4C24 4 8 32 8 56C8 80 24 108 24 108M24 4C24 4 40 32 40 56C40 80 24 108 24 108"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M24 56C18 48 10 44 4 48M24 56C30 48 38 44 44 48"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-
             <div
               className="concept-image-container relative mx-auto aspect-[1.2/1] w-full max-w-[340px] sm:max-w-[380px] md:mx-0 md:aspect-auto md:w-[480px] md:max-w-[480px] lg:w-[500px] lg:max-w-[500px]"
               style={containerStyle}
@@ -93,11 +67,7 @@ export default function ConceptSection() {
                       alt="自然光と植物に包まれた、落ち着いたサロンの一角"
                       fill
                       sizes="(max-width: 768px) 90vw, 500px"
-                      className="concept-image-photo object-cover object-[55%_center]"
-                    />
-                    <div
-                      className="concept-image-warm-overlay"
-                      aria-hidden="true"
+                      className="elise-photo object-cover object-[55%_center]"
                     />
                   </div>
                 </div>
