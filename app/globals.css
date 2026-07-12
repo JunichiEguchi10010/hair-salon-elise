@@ -109,6 +109,22 @@ body {
   }
 }
 
+.menu-section-content {
+  margin-top: calc(var(--spacing) * 8);
+}
+
+@media (width >= 48rem) {
+  .menu-section-content {
+    margin-top: calc(var(--spacing) * 10);
+  }
+}
+
+@media (width >= 64rem) {
+  .menu-section-content {
+    margin-top: calc(var(--spacing) * 12);
+  }
+}
+
 .section-label {
   font-family: var(--font-cormorant), "Times New Roman", serif;
   font-size: 11px;
@@ -171,7 +187,7 @@ body {
   filter: drop-shadow(0 12px 30px rgba(58, 58, 54, 0.08));
 }
 
-/* clipPath 底辺 y（379.422px）に合わせた PC コンテナ高さ — objectBoundingBox と併用 */
+/* blob パスの縦占有率に合わせた PC コンテナ高さ — objectBoundingBox と併用 */
 @media (width >= 768px) {
   .concept-image-container {
     height: var(--concept-clip-max-y);
@@ -197,14 +213,6 @@ body {
   background-color: var(--color-accent-hover);
 }
 
-.menu-card {
-  box-shadow: var(--shadow-soft);
-}
-
-.staff-card {
-  box-shadow: var(--shadow-soft);
-}
-
 .reservation-step-card {
   box-shadow: var(--shadow-soft);
 }
@@ -213,10 +221,29 @@ body {
   box-shadow: var(--shadow-soft);
 }
 
-.access-card {
+.instagram-photo {
   box-shadow: var(--shadow-soft);
 }
 
-.instagram-photo {
-  box-shadow: var(--shadow-soft);
+/* Access マップ：API キー未設定時の淡色フォールバック */
+.elise-map-muted {
+  isolation: isolate;
+}
+
+.elise-map-muted iframe {
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  filter: grayscale(100%) brightness(1.05) contrast(0.9) sepia(12%);
+  -webkit-filter: grayscale(100%) brightness(1.05) contrast(0.9) sepia(12%);
+}
+
+/* クロスオリジン iframe でも色味を落とす（クリックは透過） */
+.elise-map-muted-veil {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: var(--color-neutral);
+  mix-blend-mode: color;
+  opacity: 0.55;
 }

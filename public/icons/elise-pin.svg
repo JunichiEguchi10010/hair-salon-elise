@@ -1,0 +1,20 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="pinShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <path
+    filter="url(#pinShadow)"
+    d="M64 12
+       C44 12 28 28 28 48
+       C28 72 44 92 56 108
+       C60 114 62 118 64 120
+       C66 118 68 114 72 108
+       C84 92 100 72 100 48
+       C100 28 84 12 64 12Z"
+    fill="#9A8066"/>
+
+  <circle cx="64" cy="48" r="16" fill="#FFFFFF"/>
+</svg>

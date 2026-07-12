@@ -15,7 +15,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "hair salon ÉLISE | 髪をいたわり、心がほどけるひととき",
+  title: "HAIR SALON ÉLISE | 髪をいたわり、心がほどけるひととき",
   description:
     "日常にやさしさを添える、あなただけのサロン時間。Webからいつでも簡単にご予約いただけます。",
 };

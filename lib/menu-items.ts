@@ -1,46 +1,67 @@
-export type MenuIconType = "scissors" | "brush" | "drop" | "bottle";
-
 /** Supabase menus テーブル置き換え用フィールド構成 */
-export type MenuItem = {
-  name: string;
+export type MenuEntry = {
   nameJa: string;
   description: string;
   duration: string;
   price: string;
-  icon: MenuIconType;
 };
 
-export const menuItems: MenuItem[] = [
+export type MenuCategory = {
+  labelEn: string;
+  labelJa: string;
+  /** false のとき英字ラベルを大文字化しない（例: Spa） */
+  labelUppercase?: boolean;
+  items: MenuEntry[];
+};
+
+export const menuCategories: MenuCategory[] = [
   {
-    name: "Cut",
-    nameJa: "カット",
-    description: "似合わせを大切にしたデザインカット。",
-    duration: "60 min",
-    price: "¥6,600",
-    icon: "scissors",
+    labelEn: "Cut",
+    labelJa: "カット",
+    items: [
+      {
+        nameJa: "カット",
+        description: "骨格や髪質に合わせた似合わせカット",
+        duration: "60分",
+        price: "¥6,050",
+      },
+    ],
   },
   {
-    name: "Color & Care",
-    nameJa: "カラー",
-    description: "透明感のあるカラーとうるおいケア。",
-    duration: "120 min",
-    price: "¥12,100〜",
-    icon: "brush",
+    labelEn: "Color & Care",
+    labelJa: "カラー",
+    items: [
+      {
+        nameJa: "カラー",
+        description: "透明感のあるツヤカラー",
+        duration: "90分",
+        price: "¥8,800〜",
+      },
+    ],
   },
   {
-    name: "Shampoo & Spa",
-    nameJa: "シャンプー & スパ",
-    description: "頭皮をほぐし、心も軽くなるケア。",
-    duration: "45 min",
-    price: "¥4,950",
-    icon: "drop",
+    labelEn: "Treatment",
+    labelJa: "トリートメント",
+    items: [
+      {
+        nameJa: "トリートメント",
+        description: "髪の内部から整えるうるツヤケア",
+        duration: "60分",
+        price: "¥5,500〜",
+      },
+    ],
   },
   {
-    name: "Treatment",
-    nameJa: "トリートメント",
-    description: "髪の芯からうるおう集中トリートメント。",
-    duration: "60 min",
-    price: "¥6,050〜",
-    icon: "bottle",
+    labelEn: "Spa",
+    labelJa: "ヘッドスパ",
+    labelUppercase: false,
+    items: [
+      {
+        nameJa: "ヘッドスパ",
+        description: "頭皮をほぐす贅沢なリラックス時間",
+        duration: "45分",
+        price: "¥6,600〜",
+      },
+    ],
   },
 ];

@@ -1,4 +1,4 @@
-# hair salon Élise — Brand Guideline
+# HAIR SALON ÉLISE — Brand Guideline
 
 FV（Header / Hero）だけでなく、今後追加する Menu / Staff / FAQ / Access / Footer / Form / Reservation Flow でもデザインの世界観が崩れないよう、カラーと基本ルールを共通化するための基準です。
 
@@ -81,6 +81,8 @@ hover 時は `var(--color-accent-hover)` に切り替わります。
 - **形状**：直線的にしすぎず、上品でやわらかい美容室サイト
 - **Hero**：左にテキスト、右に店内写真。左側はグラデーションで文字可読性を確保
 - **セクション間**：SVG カーブなどで柔らかくつなぐ
+
+ペルソナ（依頼者・来店者）と各セクションの役割分担は **`docs/persona.md`** を参照してください。
 
 ---
 

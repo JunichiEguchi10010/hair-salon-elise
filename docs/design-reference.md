@@ -1,8 +1,8 @@
-# Design Reference — hair salon Élise
+# Design Reference — HAIR SALON ÉLISE
 
 ## 概要
 
-この画像は **hair salon Élise トップページ全体のデザイン参考** です。
+この画像は **HAIR SALON ÉLISE トップページ全体のデザイン参考** です。
 
 - **保存先**: `public/images/elise/references/full-page-reference.png`
 - **用途**: 開発・実装時のビジュアル見本（サイト上では表示しません）

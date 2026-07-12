@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ConceptSection from "@/components/ConceptSection";
+import OwnerPhilosophySection from "@/components/OwnerPhilosophySection";
 import MenuSection from "@/components/MenuSection";
-import StaffSection from "@/components/StaffSection";
 import ReservationFlowSection from "@/components/ReservationFlowSection";
 import FAQSection from "@/components/FAQSection";
 import AccessSection from "@/components/AccessSection";
@@ -16,8 +16,8 @@ export default function Home() {
       <main>
         <Hero />
         <ConceptSection />
+        <OwnerPhilosophySection />
         <MenuSection />
-        <StaffSection />
         <ReservationFlowSection />
         <FAQSection />
         <AccessSection />

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const navItems = [
   { label: "Menu", href: "#menu" },
-  { label: "Staff", href: "#staff" },
+  { label: "Philosophy", href: "#owner-philosophy" },
   { label: "Access", href: "#access" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -18,7 +18,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 md:py-5">
         <Link href="/" className="group" onClick={() => setIsOpen(false)}>
           <p className="font-serif text-[11px] tracking-[0.28em] text-[var(--color-subtext)] uppercase">
-            hair salon
+            HAIR SALON
           </p>
           <p className="font-serif text-[22px] leading-tight tracking-[0.18em] text-[var(--color-primary)] md:text-[26px]">
             ÉLISE

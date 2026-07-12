@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const footerNavItems = [
   { label: "Menu", href: "#menu" },
-  { label: "Staff", href: "#staff" },
+  { label: "Philosophy", href: "#owner-philosophy" },
   { label: "Reservation Flow", href: "#reservation-flow" },
   { label: "FAQ", href: "#faq" },
   { label: "Access", href: "#access" },
@@ -10,7 +10,7 @@ const footerNavItems = [
 ];
 
 const salonInfoItems = [
-  { label: "住所", value: "東京都世田谷区○○ 1-2-3" },
+  { label: "住所", value: "東京都世田谷区深沢 3-13-12" },
   { label: "最寄り駅", value: "東急線 ○○駅 徒歩5分" },
   { label: "営業時間", value: "平日 10:00 - 20:00 / 土日祝 9:00 - 19:00" },
   { label: "定休日", value: "火曜日" },
@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <p className="font-serif text-[11px] tracking-[0.28em] text-[var(--color-subtext)] uppercase">
-                hair salon
+                HAIR SALON
               </p>
               <p className="font-serif text-[24px] leading-tight tracking-[0.18em] text-[var(--color-primary)] md:text-[26px]">
                 ÉLISE
@@ -101,7 +101,7 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-[var(--color-tertiary)] pt-8 md:mt-20">
           <p className="text-center text-[11px] tracking-[0.08em] text-[var(--color-subtext)]">
-            © 2026 hair salon Élise. All rights reserved.
+            © 2026 HAIR SALON ÉLISE. All rights reserved.
           </p>
         </div>
       </div>

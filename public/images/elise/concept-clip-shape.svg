@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none">
+  <defs>
+    <clipPath id="concept-image-clip" clipPathUnits="objectBoundingBox">
+      <path d="
+        M0.7875,0.3525
+        C0.858,0.456,0.8915,0.601,0.8375,0.6845
+        C0.783,0.7685,0.6415,0.7915,0.5075,0.787
+        C0.3735,0.783,0.2465,0.751,0.1995,0.6865
+        C0.1525,0.622,0.184,0.482,0.2475,0.3635
+        C0.311,0.245,0.4055,0.158,0.507,0.156
+        C0.608,0.154,0.7165,0.252,0.7875,0.3525
+        Z" />
+    </clipPath>
+  </defs>
+</svg>

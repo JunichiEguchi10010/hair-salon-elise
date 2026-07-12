@@ -23,7 +23,7 @@ export default function FAQSection() {
           label="FAQ"
           titleId="faq-heading"
           title="よくあるご質問"
-          description="初めての方にも安心してご予約いただけるよう、よくあるご質問をまとめました。"
+          description="初めての方にも安心してご来店いただけるよう、よくあるご質問をまとめました。予約前に気になる点を、短く分かりやすくお答えしています。"
         />
 
         <div className="section-content mx-auto max-w-[960px]">

@@ -22,7 +22,9 @@ export default function SectionHeader({
       <h2 id={titleId} className="section-title">
         {title}
       </h2>
-      <p className="section-description">{description}</p>
+      {description ? (
+        <p className="section-description">{description}</p>
+      ) : null}
     </header>
   );
 }

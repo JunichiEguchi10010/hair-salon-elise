@@ -60,12 +60,22 @@ export default function FAQItem({
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
-        hidden={!isOpen}
-        className="border-t border-[var(--color-tertiary)]/60 px-5 pb-5 pt-4 md:px-6 md:pb-6 md:pt-5"
+        aria-hidden={!isOpen}
+        className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
       >
-        <p className="text-[13px] leading-[1.95] text-[var(--color-subtext)] md:text-[14px]">
-          {answer}
-        </p>
+        <div className="overflow-hidden">
+          <div
+            className={`border-t border-[var(--color-tertiary)]/60 px-5 pb-5 pt-4 transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none md:px-6 md:pb-6 md:pt-5 ${
+              isOpen ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <p className="whitespace-pre-line text-[13px] leading-[1.95] text-[var(--color-subtext)] md:text-[14px]">
+              {answer}
+            </p>
+          </div>
+        </div>
       </div>
     </article>
   );
