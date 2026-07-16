@@ -222,7 +222,16 @@ body {
 }
 
 .instagram-photo {
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
+}
+
+.instagram-mosaic-card {
+  min-height: 0;
+  border-radius: 0;
+}
+
+.instagram-mosaic .elise-photo {
+  border-radius: 0;
 }
 
 /* Access マップ：API キー未設定時の淡色フォールバック */

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const footerNavItems = [
   { label: "Menu", href: "#menu" },
-  { label: "Philosophy", href: "#owner-philosophy" },
+  { label: "Message", href: "#owner-philosophy" },
   { label: "Reservation Flow", href: "#reservation-flow" },
   { label: "FAQ", href: "#faq" },
   { label: "Access", href: "#access" },

@@ -1,22 +1,61 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
+
+const HEADER_OFFSET = 72;
 
 const navItems = [
   { label: "Menu", href: "#menu" },
-  { label: "Philosophy", href: "#owner-philosophy" },
+  { label: "Message", href: "#owner-philosophy" },
   { label: "Access", href: "#access" },
   { label: "FAQ", href: "#faq" },
 ];
+
+function handleSmoothScroll(
+  e: MouseEvent<HTMLAnchorElement>,
+  href: string,
+) {
+  if (!href.startsWith("#")) return;
+
+  const id = href.slice(1);
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  e.preventDefault();
+
+  const rect = el.getBoundingClientRect();
+  const scrollTop = window.scrollY + rect.top - HEADER_OFFSET;
+
+  window.scrollTo({
+    top: scrollTop,
+    behavior: "smooth",
+  });
+}
+
+function scrollToTopSmooth(e: MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault();
+  // ページ最上部へ。固定ヘッダーは top:0 で重なるためオフセットなし
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="header-glass absolute inset-x-0 top-0 z-50">
+    <header className="header-glass fixed inset-x-0 top-0 z-[1000] w-full">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 md:py-5">
-        <Link href="/" className="group" onClick={() => setIsOpen(false)}>
+        <Link
+          href="/"
+          className="group"
+          onClick={(e) => {
+            scrollToTopSmooth(e);
+            setIsOpen(false);
+          }}
+        >
           <p className="font-serif text-[11px] tracking-[0.28em] text-[var(--color-subtext)] uppercase">
             HAIR SALON
           </p>
@@ -31,6 +70,7 @@ export default function Header() {
               key={item.label}
               href={item.href}
               className="text-[13px] tracking-[0.08em] text-[var(--color-primary)] transition-colors duration-300 hover:text-[var(--color-accent)]"
+              onClick={(e) => handleSmoothScroll(e, item.href)}
             >
               {item.label}
             </Link>
@@ -38,6 +78,7 @@ export default function Header() {
           <Link
             href="#reservation"
             className="btn-accent rounded-full px-6 py-2.5 text-[13px] tracking-[0.06em]"
+            onClick={(e) => handleSmoothScroll(e, "#reservation")}
           >
             Web予約はこちら
           </Link>
@@ -79,7 +120,10 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className="block text-[15px] tracking-[0.08em] text-[var(--color-primary)]"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleSmoothScroll(e, item.href);
+                    setIsOpen(false);
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -89,7 +133,10 @@ export default function Header() {
               <Link
                 href="#reservation"
                 className="btn-accent inline-block rounded-full px-8 py-3.5 text-[14px] tracking-[0.06em]"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  handleSmoothScroll(e, "#reservation");
+                  setIsOpen(false);
+                }}
               >
                 Web予約はこちら
               </Link>

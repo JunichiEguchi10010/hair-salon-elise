@@ -30,7 +30,7 @@ export default function OwnerPhilosophySection() {
     >
       <div className="section-shell">
         <SectionHeader
-          label="Owner Philosophy"
+          label="MESSAGE"
           titleId="owner-philosophy-heading"
           title="髪と心に、静かな余白を。"
           description=""

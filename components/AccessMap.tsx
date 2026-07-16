@@ -189,7 +189,7 @@ function attachEliseLabel(
 
   overlay.onAdd = () => {
     root = document.createElement("div");
-    root.textContent = "HAIR SALON ÉLISE";
+    root.textContent = "ÉLISE";
     root.setAttribute("aria-hidden", "true");
     Object.assign(root.style, {
       position: "absolute",
@@ -318,7 +318,7 @@ function MutedEmbedFallback() {
   return (
     <div className="elise-map-muted absolute inset-0" data-map-mode="fallback">
       <iframe
-        title="HAIR SALON ÉLISE 周辺マップ（東京都世田谷区深沢 3-13-12）"
+        title="ÉLISE 周辺マップ（東京都世田谷区深沢 3-13-12）"
         src={MAP_EMBED_SRC}
         className="absolute inset-0 h-full w-full"
         loading="lazy"
@@ -382,7 +382,7 @@ export default function AccessMap() {
         new Marker({
           map,
           position: center,
-          title: "HAIR SALON ÉLISE",
+          title: "ÉLISE",
           icon: {
             url:
               window.devicePixelRatio >= 2 ? PIN_ICON_URL_2X : PIN_ICON_URL,
@@ -433,7 +433,7 @@ export default function AccessMap() {
         ref={containerRef}
         data-map-mode="js"
         role="region"
-        aria-label="HAIR SALON ÉLISE 周辺マップ（東京都世田谷区深沢 3-13-12）"
+        aria-label="ÉLISE 周辺マップ（東京都世田谷区深沢 3-13-12）"
         className="absolute inset-0 h-full w-full"
       />
     </div>

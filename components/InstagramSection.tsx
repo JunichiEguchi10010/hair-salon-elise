@@ -2,11 +2,42 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 import {
-  getInstagramImageSrc,
-  instagramPosts,
-} from "@/lib/instagram-posts";
+  instagramItems,
+  resolveInstagramItemSrc,
+} from "@/lib/instagram-items";
+
+function InstagramCard({
+  item,
+  className = "",
+}: {
+  item: (typeof instagramItems)[number];
+  className?: string;
+}) {
+  const { src, objectPosition } = resolveInstagramItemSrc(item);
+
+  return (
+    <figure
+      className={`instagram-mosaic-card relative overflow-hidden rounded-none border-none bg-[var(--color-secondary)] shadow-none ${className}`}
+    >
+      <Image
+        src={src}
+        alt=""
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 760px"
+        className="elise-photo h-full w-full rounded-none object-cover"
+        style={{ objectPosition }}
+      />
+    </figure>
+  );
+}
 
 export default function InstagramSection() {
+  const main = instagramItems.find((i) => i.id === "salon-interior");
+  const sides = instagramItems.filter(
+    (i) => i.id === "hair-care" || i.id === "hair-style",
+  );
+  const wide = instagramItems.find((i) => i.id === "salon-moment");
+
   return (
     <section
       id="instagram"
@@ -18,34 +49,62 @@ export default function InstagramSection() {
           label="Instagram"
           titleId="instagram-heading"
           title="日々のサロン風景"
-          description="店内の雰囲気やヘアスタイル、季節のケア情報をInstagramで発信しています。"
+          description=""
         />
 
-        <ul className="section-content mx-auto grid max-w-5xl list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 md:gap-8 lg:max-w-6xl lg:grid-cols-4 lg:gap-8">
-          {instagramPosts.map((post) => {
-            const imageSrc = getInstagramImageSrc(post.filename);
-
-            return (
-              <li key={post.id}>
-                <figure className="instagram-photo group relative aspect-[4/5] overflow-hidden rounded-2xl border border-[var(--color-tertiary)] bg-[var(--color-secondary)]">
-                  <Image
-                    src={imageSrc}
-                    alt={post.caption}
-                    fill
-                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 280px"
-                    className="elise-photo object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    style={{ objectPosition: post.objectPosition }}
-                  />
-                  <figcaption className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-[var(--color-primary)]/35 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
-                    <span className="px-4 pb-4 text-[12px] tracking-[0.06em] text-[var(--color-card)] md:text-[13px]">
-                      {post.caption}
-                    </span>
-                  </figcaption>
-                </figure>
+        {/*
+          max-w-[760px]。
+          PC: md:grid-cols-5（左3 : 右2）。
+          左①は aspect-square、右②③は同じ行高さを flex-col で2分割。
+        */}
+        <div className="instagram-mosaic section-content mx-auto w-full max-w-[760px] px-4 md:px-0">
+          {/* スマホ: 1〜2列のシンプルグリッド */}
+          <ul
+            aria-label="Instagram ギャラリー"
+            className="grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 sm:gap-5 md:hidden"
+          >
+            {instagramItems.map((item) => (
+              <li key={item.id} className={`min-h-0 ${item.gridClassName}`}>
+                <InstagramCard item={item} className="h-full w-full" />
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+
+          {/* PC: 5カラム / 上段 3:2 */}
+          <div
+            className="hidden gap-5 md:grid md:grid-cols-5 md:gap-6"
+            aria-label="Instagram ギャラリー"
+          >
+            {main ? (
+              <div className={`relative min-h-0 ${main.gridClassName}`}>
+                <InstagramCard
+                  item={main}
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+            ) : null}
+
+            <div className="flex min-h-0 flex-col gap-5 self-stretch md:col-span-2 md:gap-6">
+              {sides.map((item) => (
+                <div key={item.id} className="relative min-h-0 flex-1">
+                  <InstagramCard
+                    item={item}
+                    className="absolute inset-0 h-full w-full"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {wide ? (
+              <div className={`relative min-h-0 ${wide.gridClassName}`}>
+                <InstagramCard
+                  item={wide}
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+            ) : null}
+          </div>
+        </div>
 
         <div className="mt-12 flex justify-center md:mt-14 lg:mt-16">
           <Link
